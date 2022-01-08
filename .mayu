@@ -1,0 +1,233 @@
+include "104.mayu" # 109 キーボード設定
+include "vimedit.mayu"
+
+# def option FocusChange = enable
+# key U-FocusChange = $OutN
+
+keymap cxkey :Global
+key C-s		= C-s
+key C-c		= A-F4
+key k		= C-w
+key p		= C-p
+key h		= C-a
+key n		= C-n
+key f		= C-f
+key S-*n	= C-S-n
+
+keymap Global
+key C-*x = &Prefix(cxkey)
+key W-Left     = W-Left
+key W-Right    = W-Right
+key W-Up       = W-Up
+key W-Down     = W-Down
+key F11        = &WindowToggleTopMost
+key C-*m       = Enter
+key C-*h       = BackSpace
+key C-*f       = C-f
+key *Esc       = &SetImeStatus(off) $OutN Esc
+key C-*j       = &SetImeStatus(on)
+key C-*g       = &SetImeStatus(off)
+mod shift     += !!space
+key IL-C-*p    = C-p
+key IL-C-*o    = C-o
+key C-*w       = C-w
+key C-*t       = C-t
+key C-*u       = PageUp
+key C-*d       = PageDown
+key S-*BackSpace = Delete 
+# mod Ctrl        += !!c
+# mod Shift       += !!s
+# mod Alt         += !!m
+# mod Mod0        += !!c
+# key M0-*p      = UP		          			
+# key M0-*n      = DOWN 		          			
+# key M0-*b      = Left 		          			
+# key M0-*f      = Right 		          			
+
+## 以下はブラウザなどからL0のままフォーカスが移った場合の対処
+## key L0-Esc          = &Undefine
+key C-t               = &SetImeStatus(off) $InN
+key L0-h              = $OutN h
+key L0-S-h            = $OutN S-h
+key L0-j              = $OutN j
+key L0-S-j            = $OutN S-j
+key L0-k              = $OutN k
+key L0-S-k            = $OutN S-k
+key L0-l              = $OutN l
+key L0-S-l            = $OutN S-l
+key L0-v              = $OutN v
+key L0-S-v            = $OutN S-v
+key L0-i              = $OutN i
+key L0-S-i            = $OutN S-i
+key L0-a              = $OutN a
+key L0-S-a            = $OutN S-a
+key L0-o              = $OutN o
+key L0-S-o            = $OutN S-o
+
+window Chrome /Chrome\.exe/:Vim 
+key A-*d       = &SetImeStatus(off) $OutN A-d A-Enter
+key C-d        = Delete
+key C-g        = &SetImeStatus(off) Esc
+key Esc        = &SetImeStatus(off) $InN
+key C-t        = &SetImeStatus(off) C-t
+key C-a        = Home
+key C-n        = Down
+key L0-Solidus = &SetImeStatus(off) $OutN Solidus
+key C-S-o      = C-S-o
+## key *Enter     = Enter
+## key Esc        = &SetImeStatus(off) $OutN Esc
+
+
+window Edge /msedge\.exe/:Vim 
+key C-t        = &SetImeStatus(off) $InN
+key A-*d       = &SetImeStatus(off) $OutN A-d A-Enter
+key C-d        = Delete
+key C-g        = &SetImeStatus(off) Esc
+key Esc        = &SetImeStatus(off) $InN
+key C-t        = &SetImeStatus(off) C-t
+key C-a        = Home
+key C-n        = Down
+key L0-Solidus = &SetImeStatus(off) $OutN Solidus
+key C-S-o      = C-S-o
+## key *Enter     = Enter
+## key Esc        = &SetImeStatus(off) $OutN Esc
+
+
+
+window Bricscad /bricscad\.exe/ : Global
+key L0-o = $OutN o Enter
+key L0-c = $OutN c Enter m Enter
+key L0-m = $OutN m Enter
+key L0-r = $OutN r o t a t e Enter
+key L0-p = $OutN m a t c h p r o p Enter
+key C-g        = &SetImeStatus(off) $OutN Esc
+
+############
+window imemo /imemo\.exe/:Vim
+key C-s     = A-f s
+############
+window sylpheed /sylpheed\.exe/:Vim
+key C-*j       = &SetImeStatus(on)
+key C-*g       = &SetImeStatus(off)
+key C-n        =  DOWN
+key C-b        =  LEFT
+
+window outlook /outlook\.exe/:Vim
+key C-*j       = &SetImeStatus(on)
+key C-*g       = &SetImeStatus(off)
+
+window sakura /sakura\.exe/:Vim
+key C-*j       = &SetImeStatus(on)
+key C-*g       = &SetImeStatus(off)
+
+window winword /winword\.exe/:Vim
+key C-*j       = &SetImeStatus(on)
+key C-*g       = &SetImeStatus(off)
+
+window everything /everything\.exe/:Vim
+key C-*j       = &SetImeStatus(on)
+key C-*g       = &SetImeStatus(off)
+key *Esc   =  &SetImeStatus(off)
+
+############
+window Calc (/soffice\.bin/ && /Calc/):Vim
+key L0-y   = C-c
+key L0-S-p = C-v
+key L0-p   = C-v
+key L0-i   = $OutN F2
+key *Enter = Enter
+# key *Esc   = $OutN Esc 
+
+############
+#window all      /\.exe/  : Vim
+#mod shift      += !!space
+#key L0-C-h     = BackSpace
+#key *F11       = &WindowToggleTopMost # これも*が無いと動かくなる。
+#key *Enter      = Enter
+#key C-*m       = Enter
+#key C-*h       = BackSpace
+
+############
+window gnumeric /gnumeric/: Global
+# key L0-y   = C-c
+# key L0-S-p = C-v
+# key L0-p   = C-v
+# key L0-i   = $OutN F2
+# key *Enter = Enter
+
+window Firefox  /firefox\.exe/ :Global
+
+window putty     /putty\.exe/  :Global
+window mintty    /mintty\.exe/ :Global
+window word      /windword\.exe/ :Global
+
+window SHELLDLL_DefView    /SHELLDLL_DefView/ :Global
+
+window Xming    /Xming\.exe/
+
+window excel   /excel\.exe/ :Global
+mod shift          += !!space
+key C-*m           = Enter
+key C-*h           = BackSpace
+key Esc            = &SetImeStatus(off) C-s Esc
+## key C-p            =  UP
+key C-n            =  DOWN
+key C-b            =  LEFT
+## key C-f            =  RIGHT
+## key C-a		   =  Home
+## key C-e		   =  End
+## key C-d            =  Delete
+
+window GVIM     /gvim\.exe/ :Global
+mod shift          += !!space
+key C-*m            = Enter
+key C-*h            = BackSpace
+key Esc             = &SetImeStatus(off) Esc
+
+
+window teraterm     /ttermpro\.exe/ :Global
+mod shift          += !!space
+key C-*m            = Enter
+key C-*h            = BackSpace
+key Esc             = &SetImeStatus(off) Esc
+
+window VScode     /Code\.exe/ :Global
+mod shift          += !!space
+key C-*m            = Enter
+key C-*h            = BackSpace
+key Esc             = &SetImeStatus(off) Esc
+key C-S-p          = C-S-p
+
+window WindowsTerminal     /WindowsTerminal\.exe/ :Global
+mod shift          += !!space
+key C-*m            = Enter
+key C-*h            = BackSpace
+key Esc             = &SetImeStatus(off) Esc
+key C-*p            = Up
+key C-*n            = Down
+# key C-*b            = Left 
+# key C-*n            = Right
+key C-*d            = Delete
+
+# window Explorer /Explorer\.EXE/ :Global
+# window outlook    /outlook\.exe/ : Vim
+
+window Emacs    /emacs\.exe/ :Global
+key W-Left     = W-Left
+key W-Right    = W-Right
+key W-Up       = W-Up
+key W-Down     = W-Down
+key F11        = &WindowToggleTopMost
+key C-*m       = Enter
+key C-*h       = C-h
+key *Esc       = &SetImeStatus(off) $OutN Esc
+mod shift     += !!space
+key IL-C-*p    = C-p
+key IL-C-*o    = C-o
+key C-*w       = C-w
+key C-*t       = C-t
+key C-*u       = PageUp
+key C-*d       = PageDown
+
+
+
