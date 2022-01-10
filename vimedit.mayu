@@ -40,12 +40,12 @@ keymap Global
   ##  key CL-o = &MouseMove(20, 0)
   ##
     # Click
-  key A-C-n = LButton
-  key A-C-p = RButton
-  key CL-*A-n = LButton
-  key CL-*A-p = RButton
-  key CL-*A-Semicolon = RButton
-
+  ##  key A-C-n = LButton
+  ##  key A-C-p = RButton
+  ##  key CL-*A-n = LButton
+  ##  key CL-*A-p = RButton
+  ##  key CL-*A-Semicolon = RButton
+  ##
   # Mouse wheel
   key A-C-m = &MouseWheel(-520)
   key A-C-comma = &MouseWheel(520)
